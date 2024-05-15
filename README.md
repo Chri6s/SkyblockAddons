@@ -1,4 +1,5 @@
 <!--suppress HtmlDeprecatedAttribute -->
+<h2 align="center">WARNING! This is a community made update for the mod!</h2>
 <h1 align="center">SkyblockAddons</h1>
 
 <p align="center">

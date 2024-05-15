@@ -304,10 +304,11 @@ public class IslandWarpGui extends GuiScreen {
         DEEP_CAVERNS("Deep Caverns", 1400, 200),
         GOLD_MINE("Gold Mine", 1130, 475),
         MUSHROOM_DESERT("Mushroom Desert", 1470, 475),
-        THE_BARN("The Barn", 1125, 800),
+        THE_BARN("The Barn", 1125, 830),
         HUB("Hub", 300, 724),
         PRIVATE_ISLAND("Private Island", 275, 1122),
-        DUNGEON_HUB("Dungeon Hub", 1500, 1050);
+        DUNGEON_HUB("Dungeon Hub", 1500, 1050),
+        THE_GARDEN("The Garden", 10, 870);
 
         private final String label;
         private final int x;
@@ -328,11 +329,15 @@ public class IslandWarpGui extends GuiScreen {
                 bufferedImage = TextureUtil.readBufferedImage(Minecraft.getMinecraft().getResourceManager().getResource(this.resourceLocation).getInputStream());
                 this.w = bufferedImage.getWidth();
                 this.h = bufferedImage.getHeight();
-
-                if (label.equals("The End")) {
-                    IslandWarpGui.IMAGE_SCALED_DOWN_FACTOR = this.w/573F; // The original end HD texture is 573 pixels wide.
-
+                switch(label) {
+                    case "The End":
+                        IslandWarpGui.IMAGE_SCALED_DOWN_FACTOR = this.w/573F; // The original end HD texture is 573 pixels wide.
+                        break;
+                    case "The Garden":
+                        IslandWarpGui.IMAGE_SCALED_DOWN_FACTOR = this.w/300F;
+                        break;
                 }
+
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -360,6 +365,7 @@ public class IslandWarpGui extends GuiScreen {
         CRYPT("crypt", "Crypts", Island.HUB, 550, 100),
         DUNGEON_HUB("dungeon_hub", "Dungeon Hub", Island.HUB, false, 400, 175),
         MUSEUM("museum", "Museum", Island.HUB, true, 310, 200),
+        WIZARD("wizard", "Wizard", Island.HUB, true, 472, 210),
 
         SPIDERS_DEN("spider", Translations.getMessage("warpMenu.spawn"), Island.SPIDERS_DEN, true, 345, 240),
         SPIDERS_DEN_NEST("nest", "Top of Nest", Island.SPIDERS_DEN, 450, 30),
@@ -387,10 +393,13 @@ public class IslandWarpGui extends GuiScreen {
         DEEP_CAVERNS("deep", Translations.getMessage("warpMenu.spawn"), Island.DEEP_CAVERNS, true, 97, 213),
         DWARVEN_MINES("mines", "Dwarven Mines", Island.DEEP_CAVERNS, false, 280, 205),
         DWARVEN_FORGE("forge", "Forge", Island.DEEP_CAVERNS, true, 260, 280),
+        DWARVEN_BASE_CAMP("glacite", "Dwarven Base Camp", Island.DEEP_CAVERNS, true, 110, 300),
         CRYSTAL_HOLLOWS("crystals", "Crystal Hollows", Island.DEEP_CAVERNS, true, 220, 350),
         CRYSTAL_NUCLEUS("nucleus", "Crystal Nucleus", Island.DEEP_CAVERNS, true, 170, 380),
 
         DUNGEON_HUB_ISLAND("dungeon_hub", Translations.getMessage("warpMenu.spawn"), Island.DUNGEON_HUB, false, 35, 80),
+
+        GARDEN("garden", "The Garden", Island.THE_GARDEN, false, 150, 90),
         ;
 
         private final String warpName;
