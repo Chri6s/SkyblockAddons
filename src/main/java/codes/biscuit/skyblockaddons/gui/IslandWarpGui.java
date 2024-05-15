@@ -387,6 +387,7 @@ public class IslandWarpGui extends GuiScreen {
 
         THE_BARN("barn", Translations.getMessage("warpMenu.spawn"), Island.THE_BARN, true, 140, 150),
         MUSHROOM_DESERT("desert", Translations.getMessage("warpMenu.spawn"), Island.MUSHROOM_DESERT, true, 210, 295),
+        TRAPPER("trapper", "Trapper's Hut", Island.MUSHROOM_DESERT, true, 300, 200),
 
         GOLD_MINE("gold", Translations.getMessage("warpMenu.spawn"), Island.GOLD_MINE, true, 86, 259),
 
