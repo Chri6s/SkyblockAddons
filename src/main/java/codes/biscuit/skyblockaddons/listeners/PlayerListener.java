@@ -216,6 +216,7 @@ public class PlayerListener {
 
         String formattedText = e.message.getFormattedText();
         String unformattedText = e.message.getUnformattedText();
+        IChatComponent message = e.message;
         String strippedText = TextUtils.stripColor(formattedText);
 
         if (formattedText.startsWith("§7Sending to server ")) {
@@ -228,7 +229,18 @@ public class PlayerListener {
                 && (main.getConfigValues().isEnabled(Feature.OUTBID_ALERT_SOUND_IN_OTHER_GAMES) || main.getUtils().isOnSkyblock())) {
             main.getUtils().playLoudSound("random.orb", 0.5);
         }
-
+        if (main.getConfigValues().isEnabled(Feature.AOTEHider) && unformattedText.matches("There are blocks in the way!") && main.getUtils().isOnSkyblock()) {
+            try {
+                TextUtils.transformAnyChatComponent(message, component -> {
+                            ChatComponentText textComponent = (ChatComponentText) component;
+                            textComponent.text = null;
+                            return true;
+                        }
+                );
+            } catch (Exception exception) {
+                // Just catch it. Green FN
+            }
+        }
         if (main.getUtils().isOnSkyblock()) {
             // Type 2 means it's an action bar message.
             if (e.type == 2) {

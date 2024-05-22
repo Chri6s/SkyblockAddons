@@ -216,6 +216,7 @@ public enum Feature {
     HIDE_TRUE_DEFENSE(218, "settings.hideTrueDefense", new GuiFeatureData(ColorCode.RED), false),
     SHOW_PROFILE_TYPE(219, "settings.showProfileType", false),
     SHOW_NETHER_FACTION(220,"settings.showNetherFaction", false),
+    AOTEHider(221, "settings.AOTEHider", null, false),
 
     WARNING_TIME(-1, "settings.warningDuration", null, false),
     WARP_ADVANCED_MODE(-1, "settings.advancedMode", null, true),
@@ -238,6 +239,7 @@ public enum Feature {
     CHROMA_SATURATION(-1, "settings.chromaSaturation", null, false),
     CHROMA_BRIGHTNESS(-1, "settings.chromaBrightness", null, false),
     TURN_ALL_FEATURES_CHROMA(-1, "settings.turnAllFeaturesChroma", null, false);
+
 
 
     /**

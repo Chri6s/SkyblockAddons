@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 public class IslandButton extends GuiButton {
-
     @Getter private List<IslandMarkerButton> markerButtons = new ArrayList<>();
 
     private boolean disableHover = false;
@@ -112,7 +111,7 @@ public class IslandButton extends GuiButton {
             h = island.getH();
             w = island.getW();
         }
-
+        // WHY IS IT BUGGY
         if (mouseX > x && mouseY > y && mouseX < x+w && mouseY < y+h) {
             if (island.getBufferedImage() != null) {
                 int xPixel = Math.round(((mouseX - x) * IslandWarpGui.IMAGE_SCALED_DOWN_FACTOR) / expansion);

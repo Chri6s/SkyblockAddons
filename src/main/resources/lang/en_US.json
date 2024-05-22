@@ -223,7 +223,8 @@
     "hideTrueDefense": "Hide True Defense",
     "showProfileType": "Show Profile Type",
     "showNetherFaction": "Show Nether Faction",
-    "zealotSpawnAreasOnly": "Show Only in Zealot Spawn Areas"
+    "zealotSpawnAreasOnly": "Show Only in Zealot Spawn Areas",
+    "AOTEHider": "Hide AOTE chat messages"
   },
   "messages": {
     "enchants": "Enchants",
